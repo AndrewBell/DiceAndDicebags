@@ -1,13 +1,13 @@
 package com.recursivechaos.diceandicebags.service;
 
-import com.recursivechaos.diceandicebags.domain.Dice;
+import com.recursivechaos.diceandicebags.domain.Die;
 
-public interface DiceRoller {
+public interface DieRoller {
 
     /**
      * Rolls all enclosed dice
      */
     void rollDice();
 
-    Dice getDice(); 
+    Die getDice(); 
 }

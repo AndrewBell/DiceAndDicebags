@@ -3,7 +3,14 @@ package com.recursivechaos.diceandicebags.domain;
 import java.util.Map;
 
 
-public class Dice {
+/**
+ * Calling it Die is gramatically incorrect, and it really bugs me, I don't know 
+ * what to do about that, because I think calling it 'Die' is still kinda silly.
+ * 
+ * @author Andrew Bell
+ *
+ */
+public class Die {
 
     private int     sides;
     private Integer result;
@@ -11,25 +18,25 @@ public class Dice {
     private String  color = "White";
     private Map<Integer,String> faces;
    
-    public Dice(){
+    public Die(){
         this.sides = 6;
     }
 
-    public Dice(int sides) {
+    public Die(int sides) {
         this.sides = sides;
     }
     
-    public Dice(int sides, String color) {
+    public Die(int sides, String color) {
         this.sides = sides;
         this.color = color;
     }
     
-    public Dice(Map<Integer,String> faces){
+    public Die(Map<Integer,String> faces){
         this.faces = faces;
         this.sides = faces.size();
     }
     
-    public Dice(Map<Integer, String> faces, String color) {
+    public Die(Map<Integer, String> faces, String color) {
         this.faces = faces;
         this.sides = faces.size();
         this.color = color;

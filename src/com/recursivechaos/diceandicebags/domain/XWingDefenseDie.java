@@ -3,15 +3,16 @@ package com.recursivechaos.diceandicebags.domain;
 import java.util.HashMap;
 import java.util.Map;
 
-public class XWingAttackDice extends Dice {
 
+public class XWingDefenseDie extends Die {
+    
     private static final Map<Integer,String> FACES;
     static {
         FACES = new HashMap<Integer,String>();
-        FACES.put(1, "Crit");
-        FACES.put(2, "Hit");
-        FACES.put(3, "Hit");
-        FACES.put(4, "Hit");
+        FACES.put(1, "Evade");
+        FACES.put(2, "Evade");
+        FACES.put(3, "Evade");
+        FACES.put(4, "Evade");
         FACES.put(5, "Focus");
         FACES.put(6, "Blank");
         FACES.put(7, "Blank");
@@ -19,8 +20,7 @@ public class XWingAttackDice extends Dice {
         
     }
             
-    public XWingAttackDice(){
-        super(FACES,"Red");
+    public XWingDefenseDie(){
+        super(FACES,"Green");
     }
-    
 }

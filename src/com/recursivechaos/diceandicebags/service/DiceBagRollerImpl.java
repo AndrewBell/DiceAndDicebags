@@ -1,7 +1,9 @@
 package com.recursivechaos.diceandicebags.service;
 
-import com.recursivechaos.diceandicebags.domain.Dice;
+import java.util.List;
+
 import com.recursivechaos.diceandicebags.domain.DiceBag;
+import com.recursivechaos.diceandicebags.domain.Die;
 
 public class DiceBagRollerImpl implements DiceBagRoller {
 
@@ -12,11 +14,19 @@ public class DiceBagRollerImpl implements DiceBagRoller {
     }
 
     public void rollAllDice() {
-        for(Dice die : bag.getDice()){
+        for(Die die : bag.getDice()){
             DiceService.rollDice(die);
         }
     }
-    
-    
 
+	public void rollDice(Die checkDice) {
+		// There's some potential concurrency issues
+		// in here, be warned.
+		List<Die> dice = bag.getDice();
+		for(Die pickedDie : dice){
+			if(pickedDie.equals(checkDice)&&(pickedDie.isHeld()==false)){
+				pickedDie = DiceService.rollDice(pickedDie);
+			}
+		}
+	}
 }

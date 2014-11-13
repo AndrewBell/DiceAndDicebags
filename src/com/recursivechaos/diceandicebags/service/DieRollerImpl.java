@@ -1,12 +1,12 @@
 package com.recursivechaos.diceandicebags.service;
 
-import com.recursivechaos.diceandicebags.domain.Dice;
+import com.recursivechaos.diceandicebags.domain.Die;
 
-public class DiceRollerImpl implements DiceRoller{
+public class DieRollerImpl implements DieRoller{
     
-    Dice dice;
+    Die dice;
     
-    public DiceRollerImpl(Dice singleDice) {
+    public DieRollerImpl(Die singleDice) {
         this.dice = singleDice;
     }
 
@@ -14,7 +14,7 @@ public class DiceRollerImpl implements DiceRoller{
         DiceService.rollDice(dice);
     }
 
-    public Dice getDice() {
+    public Die getDice() {
         return this.dice;
     }
 

@@ -3,7 +3,7 @@ package com.recursivechaos.diceandicebags.domain;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CoinDice extends Dice {
+public class CoinDie extends Die {
 
     private static final Map<Integer,String> FACES;
     static {
@@ -12,7 +12,7 @@ public class CoinDice extends Dice {
         FACES.put(2, "Tails");
     }
             
-    public CoinDice(){
+    public CoinDie(){
         super(FACES,"Silver");
     }
      
