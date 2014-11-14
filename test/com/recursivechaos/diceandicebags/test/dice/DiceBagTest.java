@@ -1,11 +1,15 @@
 package com.recursivechaos.diceandicebags.test.dice;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
 
 import org.junit.Test;
 
-import com.recursivechaos.diceandicebags.domain.Die;
 import com.recursivechaos.diceandicebags.domain.DiceBag;
+import com.recursivechaos.diceandicebags.domain.Die;
 import com.recursivechaos.diceandicebags.service.DiceBagRoller;
 import com.recursivechaos.diceandicebags.service.DiceBagRollerImpl;
 
@@ -48,6 +52,8 @@ public class DiceBagTest {
         
         DiceBagRoller roller = new DiceBagRollerImpl(bag);
         roller.rollDice(oneDie);
+        List<Die> dice = roller.getBag().getDice();
+        assertTrue(dice.get(0).getResult()>0&&dice.get(0).getResult()<=dice.get(0).getSides());
         
     }
 

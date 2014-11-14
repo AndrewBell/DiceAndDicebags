@@ -29,4 +29,8 @@ public class DiceBagRollerImpl implements DiceBagRoller {
 			}
 		}
 	}
+
+    public DiceBag getBag() {
+       return bag;
+    }
 }
